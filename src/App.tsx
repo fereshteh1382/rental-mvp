@@ -6,6 +6,7 @@ import { HomePage } from "./pages/HomePage";
 import { ItemsPage } from "./pages/ItemsPage";
 import { ItemDetailPage } from "./pages/ItemDetailPage";
 import { DashboardPage } from "./pages/DashboardPage";
+import {AuthModal} from "./components/AuthModal";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
       </MainLayout>
+      <AuthModal />
+
     </BrowserRouter>
   );
 }

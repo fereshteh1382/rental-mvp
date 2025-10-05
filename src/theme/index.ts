@@ -1,6 +1,11 @@
 import { extendTheme } from "@mui/joy/styles";
 
 const theme = extendTheme({
+  fontFamily: {
+    body: "IRANSans, system-ui, sans-serif",
+    display: "IRANSans, system-ui, sans-serif",
+    code: "monospace",
+  },
   colorSchemes: {
     light: {
       palette: {
