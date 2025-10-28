@@ -3,9 +3,9 @@ import { MainLayout } from "./layouts/MainLayout";
 
 // 📄 صفحات
 import { HomePage } from "./pages/HomePage";
-import { ItemsPage } from "./pages/ItemsPage";
-import { ItemDetailPage } from "./pages/ItemDetailPage";
-import { DashboardPage } from "./pages/DashboardPage";
+import  ItemsPage  from "./pages/ItemsPage";
+import  ItemDetailsPage  from "./pages/ItemDetailPage";
+import  Dashboard  from "./pages/Dashboard";
 import {AuthModal} from "./components/AuthModal";
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/items" element={<ItemsPage />} />
-          <Route path="/items/:id" element={<ItemDetailPage />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/items/:id" element={<ItemDetailsPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </MainLayout>
       <AuthModal />

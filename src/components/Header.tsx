@@ -3,6 +3,7 @@ import { Grid, Sheet, Typography, Button, Input, IconButton, Box } from "@mui/jo
 import { useUiStore } from "../store/uiStore";
 import { MapSelector } from "./MapSelector";
 import 'leaflet/dist/leaflet.css';
+import { Link } from "react-router-dom";
 
 
 export function Header() {
@@ -16,7 +17,7 @@ export function Header() {
       sx={{
         borderBottom: "1px solid",
         borderColor: "neutral.outlinedBorder",
-        position: "sticky",
+       
         top: 0,
         zIndex: 1000,
       }}
@@ -85,6 +86,18 @@ export function Header() {
               <Button variant="solid" color="primary" onClick={openSignup}>
                 ثبت نام / ورود
               </Button>
+              <Link
+              
+              to={`/items/`}
+              className=""
+            >لیست وسایل            
+            </Link>
+            <Link
+              
+              to={`/dashboard/`}
+              className=""
+            >پنل کاربری          
+               </Link>
               <MapSelector
                 open={mapOpen}
                 onClose={() => setMapOpen(false)}
@@ -151,7 +164,7 @@ export function Header() {
       src="/img/hero.svg"
       alt="تصویر"
       sx={{
-        position: "absolute",
+       // position: "absolute",
         bottom: 0, // فاصله از پایین
         left: 0,   // فاصله از چپ
        
