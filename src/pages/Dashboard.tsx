@@ -4,11 +4,13 @@ import { Grid, Sheet, Typography, Button, Box, Stack } from "@mui/joy";
 import { FiPackage, FiList, FiLogOut } from "react-icons/fi";
 import MyItems from "./MyItems";
 import MyRequests from "./MyRequests";
+import AddItem from "./AddItem";
 
-type Page = "myItems" | "myRequests";
+type Page = "myItems" | "myRequests" | "addItem" | "editItem";
 
 const Dashboard: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>("myItems");
+  const [editItemId, setEditItemId] = useState<number | null>(null);
 
   return (
     <Grid container sx={{ height: "100vh" }} dir="rtl">
@@ -62,8 +64,35 @@ const Dashboard: React.FC = () => {
       {/* محتوای اصلی */}
       <Grid xs={9}>
         <Box sx={{ p: 3, height: "100%", overflow: "auto", bgcolor: "#f9f9f9" }}>
-          {currentPage === "myItems" && <MyItems />}
+
+          {currentPage === "myItems" && (
+            <MyItems
+              onAddItem={() => setCurrentPage("addItem")}
+              onEditItem={(id) => {
+                setEditItemId(id);
+                setCurrentPage("editItem");
+              }}
+            />
+          )}
+
           {currentPage === "myRequests" && <MyRequests />}
+          {currentPage === "addItem" && (
+            <AddItem
+              mode="add"
+              onBack={() => setCurrentPage("myItems")}
+            />
+          )}
+
+          {currentPage === "editItem" && editItemId !== null && (
+            <AddItem
+              mode="edit"
+              itemId={editItemId}
+              onBack={() => setCurrentPage("myItems")}
+            />
+          )}
+
+
+         
         </Box>
       </Grid>
     </Grid>

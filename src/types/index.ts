@@ -1,9 +1,9 @@
 export interface Item {
-    id: string;
+    id: number;
     title: string;
     description: string;
     price: number;
-    imageUrl: string;
+    images: string;
     category: string;
   }
   
@@ -15,4 +15,8 @@ export interface Item {
     endDate: string;
     status: "pending" | "approved" | "rejected";
   }
- 
+  interface AddItemProps {
+    itemId?: number;
+    isEditMode?: boolean;
+  }
+  

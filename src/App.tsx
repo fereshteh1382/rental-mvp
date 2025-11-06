@@ -7,6 +7,7 @@ import  ItemsPage  from "./pages/ItemsPage";
 import  ItemDetailsPage  from "./pages/ItemDetailPage";
 import  Dashboard  from "./pages/Dashboard";
 import {AuthModal} from "./components/AuthModal";
+import AddItem from "./pages/AddItem";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/items" element={<ItemsPage />} />
           <Route path="/items/:id" element={<ItemDetailsPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/addItem" element={<AddItem />} />
         </Routes>
       </MainLayout>
       <AuthModal />
