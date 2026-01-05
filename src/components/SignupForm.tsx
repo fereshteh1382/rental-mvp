@@ -15,7 +15,7 @@ export default function SignupForm() {
   const handleSignup = async (data: SignupFormData) => {
     try {
       await api.post("/register", {
-        username: data.name,
+        username: data.username,
         email: data.email,
         phone: data.phone,
         password: data.password,

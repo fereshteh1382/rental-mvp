@@ -18,7 +18,7 @@ export default function LoginForm({ onSuccess }: { onSuccess: () => void }) {
         username: data.username,
         password: data.password,
       });
-
+console.log(res);
       localStorage.setItem("token", res.data.access_token);
       setMessage("ورود موفق 🎉");
       onSuccess();
