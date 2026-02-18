@@ -4,9 +4,10 @@ import { Grid, Sheet, Typography, Button, Box, Stack } from "@mui/joy";
 import { FiPackage, FiList, FiLogOut } from "react-icons/fi";
 import MyItems from "./MyItems";
 import MyRequests from "./MyRequests";
+import MyRequests2 from "./MyRequests2";
 import AddItem from "./AddItem";
 
-type Page = "myItems" | "myRequests" | "addItem" | "editItem";
+type Page = "myItems" | "myRequests" | "addItem" | "editItem" | "myRequests2";
 
 const Dashboard: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>("myItems");
@@ -50,6 +51,14 @@ const Dashboard: React.FC = () => {
             </Button>
 
             <Button
+              variant={currentPage === "myRequests2" ? "solid" : "outlined"}
+              color="success"
+              startDecorator={<FiList />}
+              onClick={() => setCurrentPage("myRequests2")}
+            >
+              2درخواست‌های من
+            </Button>
+            <Button
               variant="outlined"
               color="danger"
               startDecorator={<FiLogOut />}
@@ -76,6 +85,7 @@ const Dashboard: React.FC = () => {
           )}
 
           {currentPage === "myRequests" && <MyRequests />}
+          {currentPage === "myRequests2" && <MyRequests2 />}
           {currentPage === "addItem" && (
             <AddItem
               mode="add"
